@@ -10,6 +10,8 @@ function HogBoss() {
     setEyeColor(e.target.value);
   }
 
+  const babyHog = offspring.map((babyHog) => <BabyHog key={babyHog.id} eyeColor={eyeColor} name={babyHog.name} hobby={babyHog.hobby}/>)
+
   return (
     <div>
       <input
@@ -40,7 +42,7 @@ function HogBoss() {
         <img id="boss-blaster" src={Boss} alt="" />
       </div>
       <ul className="hoglist">
-        {offspring.map((babyHog) => <BabyHog key={babyHog.id} eyeColor={eyeColor} name={babyHog.name} hobby={babyHog.hobby}/>)}
+        {babyHog}
       </ul>
     </div>
   );
